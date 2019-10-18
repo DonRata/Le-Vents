@@ -1,5 +1,7 @@
 from django.db import models
 from django.utils import timezone
+from django import forms
+
 
 
 class Post(models.Model):
@@ -17,3 +19,12 @@ class Post(models.Model):
 
         def __str__(self):
             return self.title
+
+class Usuario(models.Model):
+        run = models.ForeignKei('auth.User', on_delete=models.CASCADE)
+        nombre = models.CharField(max_length=40)
+        apellido_paterno = models.CharField(max_length=40)
+        apellido_materno = models.CharField(max_length=40)
+        user = models.CharField(max_length=40)
+        password = models.CharField(max_length=50)
+        
