@@ -7,14 +7,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--Boostrap link-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous" />
+    <!--Jquery script-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!--Boostrap script-->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+    <!--JQuery + Jquery validate-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js"></script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" />
+
+    <!--Para linkear desde la carpeta de static-->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/popup.css' %}">
 </head>
 <body>
-    <img src="{% static 'img/' %}" alt="">
-    {% block content %}
+    <div class="container">
+        <section>
+            <div class="header">
+                <a href="" style="display:inline-block;">
+                    <img src="{% static 'img/logos/Logo.png' %}" alt="Logo" id="logo">
+                </a>
+                <nav class="navbar navbar-style">
+                    <ul class="navbar-nav mr-auto" style="color: white;">
+                        <li class="nav-item">
+                        <a class="nav-link" style="color: white;" href="/paginas/quienes-somos.html">Quienes Somos</a>
+                        </li>
+                    </ul>
+                    &nbsp; &nbsp; &nbsp;
+                    <button id="btn-abrir-popup" class="btn-abrir-popup" style="color:white;background-color:transparent;border:transparent; padding-right:10px; display:flex">
+                        <img src="{% static 'img/logos/user-icon.png' %}" alt="Icono registro" height="25" />
+                        &nbsp;Registro
+                    </button>
+                </nav>
+            </div>
+        </section>
+        <section>
+        {% block Carousel %}
 
-    {% endblock %}
+        {% endblock %}
+        </section>
+    </div>
+    
 
     {% block testing %}
 
