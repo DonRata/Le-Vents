@@ -13,7 +13,7 @@ class Usuario(models.Model):
     password = models.CharField(max_length=50)
 
     def __str__(self):
-        return self.run
+        return self.nombre_completo
 
 
 class Marca(models.Model):
@@ -21,7 +21,7 @@ class Marca(models.Model):
     nombre_marca = models.CharField(max_length=10)
 
     def __str__(self):
-        return self.id_marca
+        return self.nombre_marca
 
 
 class Genero(models.Model):
@@ -30,7 +30,7 @@ class Genero(models.Model):
 
 
     def __str__(self):
-        return self.id_genero
+        return self.nombre_genero
 
 
 class Tipo(models.Model):
@@ -39,11 +39,12 @@ class Tipo(models.Model):
 
 
     def __str__(self):
-        return self.id_tipo
+        return self.nombre_tipo
 
 
 class Producto(models.Model):
     id_producto = models.IntegerField()
+    estado = models.BooleanField(default=True)
     nombre_producto = models.CharField(max_length=100)
     precio = models.IntegerField()
     stock = models.IntegerField()
@@ -53,7 +54,7 @@ class Producto(models.Model):
     tipo = models.ForeignKey(Tipo, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.id_producto
+        return self.nombre_producto
 
 
 class Boleta(models.Model):
