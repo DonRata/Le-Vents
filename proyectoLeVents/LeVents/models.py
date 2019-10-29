@@ -2,43 +2,73 @@ from django.db import models
 from django.utils import timezone
 from django import forms
 
-class Usuario(models.Model):
-        run = models.CharField(max_length=200 )
-        nombre_completo = models.CharField(max_length=200)
-        email = models.CharField(max_length=100)
-        fecha_nacimiento = models.DateField()
-        telefono_contacto = models.CharField(max_length=15)
-        user = models.CharField(max_length=40)
-        password = models.CharField(max_length=50)
 
-        def str(self):
-            return self.run
+class Usuario(models.Model):
+    run = models.CharField(max_length=200)
+    nombre_completo = models.CharField(max_length=200)
+    email = models.CharField(max_length=100)
+    fecha_nacimiento = models.DateField()
+    telefono_contacto = models.CharField(max_length=15)
+    user = models.CharField(max_length=40)
+    password = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.run
+
+
+class Marca(models.Model):
+    id_marca = models.IntegerField()
+    nombre_marca = models.CharField(max_length=10)
+
+    def __str__(self):
+        return self.id_marca
+
+
+class Genero(models.Model):
+    id_genero = models.IntegerField()
+    nombre_genero = models.CharField(max_length=10)
+
+
+    def __str__(self):
+        return self.id_genero
+
+
+class Tipo(models.Model):
+    id_tipo = models.IntegerField()
+    nombre_tipo = models.CharField(max_length=20)
+
+
+    def __str__(self):
+        return self.id_tipo
+
 
 class Producto(models.Model):
-        idProducto = models.IntegerField()
-        nombre = models.CharField(max_length=100)
-        precio = models.IntegerField()
-        stock = models.IntegerField()
-        foto = models.ImageField(upload_to='img')
+    id_producto = models.IntegerField()
+    nombre_producto = models.CharField(max_length=100)
+    precio = models.IntegerField()
+    stock = models.IntegerField()
+    foto = models.ImageField(upload_to='img')
+    marca = models.ForeignKey(Marca, on_delete=models.CASCADE)
+    genero = models.ForeignKey(Genero, on_delete=models.CASCADE)
+    tipo = models.ForeignKey(Tipo, on_delete=models.CASCADE)
 
-        def str(self):
-            return self.idProducto
+    def __str__(self):
+        return self.id_producto
+
 
 class Boleta(models.Model):
-        idBoleta = models.IntegerField()
-        fecha_venta = models.DateField()
+    id_boleta = models.IntegerField()
+    fecha_venta = models.DateField()
 
-        def str(self):
-            return self.idBoleta
+    def __str__(self):
+        return self.id_boleta
 
 
 class Venta(models.Model):
-        idVenta = models.IntegerField()
-        boleta = models.ForeignKey(Boleta, on_delete=models.CASCADE)
-        comprador = models.ForeignKey(Usuario, on_delete=models.CASCADE)
-        producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
+    id_venta = models.IntegerField()
+    boleta = models.ForeignKey(Boleta, on_delete=models.CASCADE)
+    comprador = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
 
-        def str(self):
-            return self.idVenta
-        
-
+    def __str__(self):
+        return self.id_venta
