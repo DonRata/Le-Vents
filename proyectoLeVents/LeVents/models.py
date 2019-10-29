@@ -11,10 +11,34 @@ class Usuario(models.Model):
         user = models.CharField(max_length=40)
         password = models.CharField(max_length=50)
 
-        def publish(self):
-            self.save()
-        
-        def __str__(self):
+        def str(self):
             return self.run
+
+class Producto(models.Model):
+        idProducto = models.IntegerField()
+        nombre = models.CharField(max_length=100)
+        precio = models.IntegerField()
+        stock = models.IntegerField()
+        foto = models.ImageField()
+
+        def str(self):
+            return self.idProducto
+
+class Boleta(models.Model):
+        idBoleta = models.IntegerField()
+        fecha_venta = models.DateField()
+
+        def str(self):
+            return self.idBoleta
+
+
+class Venta(models.Model):
+        idVenta = models.IntegerField()
+        boleta = models.ForeignKey(Boleta, on_delete=models.CASCADE)
+        comprador = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+        producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
+
+        def str(self):
+            return self.idVenta
         
 
