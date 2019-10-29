@@ -5,6 +5,12 @@
 
 
 {% block content %}
-
-
+	{% for p in productos %}
+    	<div class="producto">
+        	<img src="{{ img.foto. url }}" alt="zapatos1" />
+        	<br />&nbsp;p.nombre<br />
+        	<h6>&nbsp;p.precio</h6>
+        	<button class="btn-comprar">&nbsp;Comprar&nbsp;</button>
+        </div>
+	{% endfor %}
 {% endblock %}
