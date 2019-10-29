@@ -76,11 +76,12 @@
             </button>
           </nav>
         </div>
+        {% block Carousel %} 
+        {% endblock %}
       </section>
-      <section>
-        {% block Carousel %} {% endblock %}
-      </section>
-
+      {% block content %}
+      
+      {% endblock %}
       <section>
         <footer class="page-footer font-small mdb-color lighten-3 pt-4">
           <!-- Footer Links -->

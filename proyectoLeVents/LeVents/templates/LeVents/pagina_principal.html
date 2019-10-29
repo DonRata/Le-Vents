@@ -36,6 +36,35 @@
 </div>
 {% endblock %}
 
-{% block testing%}
-
+{% block content %}
+<section>
+    <div class="contenedor-tienda">
+        <div class="tienda" id="t-hombre">
+            <div class="left">
+                <div class="titulo">
+                    <h2>Calzado Hombre</h2>
+                </div>
+                <div class="boton">
+                    <a class="btn-ir" href="/paginas/productos-hombre.html">Ir a Comprar</a>
+                </div>
+            </div>
+            <a class="test" href="paginas/productos-hombre.html">
+                <img class="bg" src="img/hombre.jpg" style="height: 250px; width:200px" alt="Imagen Hombre" />
+            </a>
+        </div>
+        <div class="tienda" id="t-mujer">
+            <div class="left">
+                <div class="titulo">
+                    <h2>Calzado Mujer</h2>
+                </div>
+                <div class="boton">
+                    <a class="btn-ir" href="/paginas/productos-mujer.html">Ir a Comprar</a>
+                </div>
+            </div>
+            <a class="test" href="paginas/productos-mujer.html">
+                <img class="bg" src="img/mujer.jpg" style="height: 250px; width:200px" alt="Imagen Mujer" />
+            </a>
+        </div>
+    </div>
+</section>
 {% endblock%}
