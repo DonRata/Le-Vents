@@ -1,5 +1,6 @@
-#container{
-    background-color: lightgrey !important;
+.contenedor-general{
+    max-width: 100%;
+    background-color: lightgrey;
 }
 .header{
     background-color: grey !important;
