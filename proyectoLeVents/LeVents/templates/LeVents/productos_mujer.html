@@ -9,7 +9,7 @@
 		{% for p in productos %}
 			{% if p.genero.nombre_genero == 'mujer' %}
 				<div class="producto">
-					<img src="{{p.foto.url}}" alt="zapatos1" />
+					<img src="{{p.foto.url}}" alt="{{p.nombre_producto}}" />
 					<br />&nbsp;{{p.nombre_producto}}<br />
 					<h6>&nbsp;{{p.precio}}</h6>
 					{{p.genero}}
