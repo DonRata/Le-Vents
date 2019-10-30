@@ -15,6 +15,20 @@ class Usuario(models.Model):
     def __str__(self):
         return self.nombre_completo
 
+class Imagenes_Pagina(models.Model):
+    nombre = models.CharField(max_length=30)
+    imagen = models.ImageField(upload_to='imagenes pagina', null=True)
+    
+    def __str__(self):
+        return self.nombre_completo
+
+class Carousel(models.Model):
+    nombre = models.CharField(max_length=30)
+    imagen = models.ImageField(upload_to='Carousel', null=True)
+    descripcion = models.CharField(max_length=100, null=True)
+
+    def __str__(self):
+        return self.nombre_completo
 
 class Marca(models.Model):
     id_marca = models.IntegerField()
