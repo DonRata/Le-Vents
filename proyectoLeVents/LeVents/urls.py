@@ -7,6 +7,7 @@ urlpatterns = [
     path('', views.pagina_principal),
     path('productos-hombre', views.productos_hombre ),
     path('productos-mujer', views.productos_mujer ),
+    path('producto/<int:id_producto>', views.mostrar_producto),
     path('quienes-somos', views.quienes_somos ),
 ]
 if settings.DEBUG:

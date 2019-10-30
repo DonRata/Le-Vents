@@ -1,9 +1,13 @@
 from django.forms import ModelForm
-from .models import Usuario
+from .models import Usuario, Genero, Producto
 from django import forms
 
-
-class UserForm(forms.ModelForm):
-    password = forms.CharField(widget=forms.PasswordInput)
+class GeneroForm(forms.ModelForm):
     class Meta:
-        model = Usuario
+        model = Genero
+        fields = ['id_genero', 'estado', 'nombre_genero', 'imagen', 'descripcion']
+
+class ProductoForm(forms.ModelForm):
+    class Meta:
+        model = Producto
+        fields = ['id_producto','estado','nombre_producto','precio','stock','foto','marca','genero','tipo']

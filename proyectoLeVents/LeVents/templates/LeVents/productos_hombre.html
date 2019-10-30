@@ -14,6 +14,9 @@
 					<h6>&nbsp;{{p.precio}}</h6>
 					{{p.genero}}
 					<button class="btn-comprar">&nbsp;Comprar&nbsp;</button>
+					<div class="boton">
+                            <a class="btn-ir" href="/producto/{{p.id_producto}}">Ver producto</a>
+                    </div>
 				</div>
 			{% endif %}
 		{% endfor %}

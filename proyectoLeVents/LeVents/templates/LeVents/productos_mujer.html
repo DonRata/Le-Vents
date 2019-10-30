@@ -5,6 +5,20 @@
 
 
 {% block content %}
-
-
+	<div class="contenedor-productos">
+		{% for p in productos %}
+			{% if p.genero.nombre_genero == 'mujer' %}
+				<div class="producto">
+					<img src="{{p.foto.url}}" alt="zapatos1" />
+					<br />&nbsp;{{p.nombre_producto}}<br />
+					<h6>&nbsp;{{p.precio}}</h6>
+					{{p.genero}}
+					<button class="btn-comprar">&nbsp;Comprar&nbsp;</button>
+					<div class="boton">
+                            <a class="btn-ir" href="/producto/{{p.id_producto}}">Ver producto</a>
+                    </div>
+				</div>
+			{% endif %}
+		{% endfor %}
+	</div>
 {% endblock %}
