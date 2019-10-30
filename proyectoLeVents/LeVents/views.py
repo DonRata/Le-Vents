@@ -14,12 +14,12 @@ def pagina_principal(request):
 
 
 def productos_hombre(request):
-    productos = Producto.objects.all()
+    productos = Producto.objects.all().filter(genero_id=1)
     return render(request, "LeVents/productos_hombre.html", {'productos': productos})
 
 
 def productos_mujer(request):
-    productos = Producto.objects.all()
+    productos = Producto.objects.all().filter(genero_id=2)
     return render(request, 'LeVents/productos_mujer.html', {'productos': productos})
 
 def quienes_somos(request):
