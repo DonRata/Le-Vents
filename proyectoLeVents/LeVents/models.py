@@ -24,7 +24,7 @@ class Imagenes_Pagina(models.Model):
 
 class Carousel(models.Model):
     nombre = models.CharField(max_length=30)
-    imagen = models.ImageField(upload_to='imagenes pagina', null=True)
+    imagen = models.ImageField(upload_to='Carousel', null=True)
     descripcion = models.CharField(max_length=100, null=True)
 
     def __str__(self):
