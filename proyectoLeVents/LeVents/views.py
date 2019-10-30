@@ -7,8 +7,9 @@ from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from .models import Usuario, Marca, Genero, Tipo, Producto, Boleta, Venta
 
 
-def page_list(request):
-    return render(request, 'LeVents/pagina_principal.html', {})
+def pagina_principal(request):
+    generos = Genero.objects.all()
+    return render(request, 'LeVents/pagina_principal.html', {'generos':generos})
 
 
 def productos_hombre(request):

@@ -23,11 +23,13 @@ class Marca(models.Model):
     def __str__(self):
         return self.nombre_marca
 
-
+#Genero corresponde a Categorias!!
 class Genero(models.Model):
     id_genero = models.IntegerField()
+    estado = models.BooleanField(default=True)
     nombre_genero = models.CharField(max_length=10)
-
+    imagen = models.ImageField(upload_to='img/categorias', null=True)
+    descripcion = models.CharField(max_length=30, null=True)
 
     def __str__(self):
         return self.nombre_genero
@@ -48,7 +50,7 @@ class Producto(models.Model):
     nombre_producto = models.CharField(max_length=100)
     precio = models.IntegerField()
     stock = models.IntegerField()
-    foto = models.ImageField(upload_to='img', null=True)
+    foto = models.ImageField(upload_to='img/productos', null=True)
     marca = models.ForeignKey(Marca, on_delete=models.CASCADE)
     genero = models.ForeignKey(Genero, on_delete=models.CASCADE)
     tipo = models.ForeignKey(Tipo, on_delete=models.CASCADE)
