@@ -9,6 +9,7 @@ urlpatterns = [
     path('productos-mujer', views.productos_mujer ),
     path('producto/<int:id_producto>', views.mostrar_producto),
     path('quienes-somos', views.quienes_somos ),
+    path('registrar_usuario', views.registrar_usuario),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

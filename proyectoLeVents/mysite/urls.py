@@ -7,4 +7,5 @@ urlpatterns = [
     path('productos_hombre', include('LeVents.urls')),
     path('productos_mujer', include('LeVents.urls')),
     path('quienes_somos', include('LeVents.urls')),
+    path('registrar_usuario', include('LeVents.urls')),
 ]

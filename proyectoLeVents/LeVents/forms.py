@@ -11,3 +11,8 @@ class ProductoForm(forms.ModelForm):
     class Meta:
         model = Producto
         fields = ['id_producto','estado','nombre_producto','precio','stock','foto','marca','genero','tipo']
+
+class RegistroUsuarioForm(forms.ModelForm):
+    class Meta:
+        model = Usuario
+        fields = ['run','nombre_completo','email','fecha_nacimiento','telefono_contacto','user','password','password']
