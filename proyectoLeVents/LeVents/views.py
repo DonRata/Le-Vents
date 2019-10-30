@@ -4,13 +4,12 @@ from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 
 # -----------  para nuestos modelos --------------------
-from .models import Usuario, Marca, Genero, Tipo, Producto, Boleta, Venta
-
-from .forms import GeneroForm, ProductoForm
+from .models import Usuario, Marca, Genero, Tipo, Producto, Boleta, Venta, Imagenes_Pagina
+from .forms import ProductoForm
 
 def pagina_principal(request):
     generos = Genero.objects.all()
-    return render(request, 'LeVents/pagina_principal.html', {'generos':generos})
+    return render(request, 'LeVents/pagina_principal.html', {'generos': generos})
 
 
 def productos_hombre(request):
