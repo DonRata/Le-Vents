@@ -25,7 +25,7 @@ def quienes_somos(request):
     return render(request, 'LeVents/quienes_somos.html', {})
 
 def mostrar_producto(request, id_producto):
-    instancia = Producto.objects.get(id=id_producto)
+    instancia = Producto.objects.get(id_producto=id_producto)
     form= ProductoForm(instance=instancia)
     if request.method == "POST":
         form= ProductoForm(request.POST, instance=instancia)
