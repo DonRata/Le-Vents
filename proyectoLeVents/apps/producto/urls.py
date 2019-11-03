@@ -5,10 +5,13 @@ from django.contrib.auth.decorators import login_required
 from . import views
 #from apps.producto.views import pagina_principal 
 
+app_name = 'producto'  #nombre de la app, se usa para el redirect
 urlpatterns = [
     path('', views.pagina_principal, name='pagina_principal'),
     path('quienes_somos/', views.quienes_somos, name='quienes_somos'),
     path('productos/<int:id_url>', views.listar_productos, name='product_list'),
+    path('editar/<int:id_prod>', views.editar_producto, name='product_edit'),
+    path('eliminar/<int:id_prod>', views.borrar_producto, name='product_delete'),
 ]
 
 if settings.DEBUG:
