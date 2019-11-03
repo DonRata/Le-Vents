@@ -33,3 +33,25 @@ def mostrar_producto(request, id_producto):
             instancia = form.save(commit=False)
             instancia.save()
     return render(request, "LeVents/producto.html", {'form':form})
+
+def editar_producto(request, id_producto):
+    producto = Producto.objects.get(id_producto=id_producto)
+    if request.method == "GET":
+        form= ProductoForm(instance=producto)
+    else:
+        form= ProductoForm(request.POST, instance=producto)
+        if form.is_valid():
+            producto = form.save(commit=False)
+            producto.save()
+        return redirect('/')
+    return render(request, "LeVents/productos_editar.html", {'form':form})
+
+class ProductoList(ListView):
+    model = Producto
+    template_name = 'Levents/productos_hombre.html'
+
+class ProductoUpdate(CreateView):
+    model = Producto
+    form_class = ProductoForm
+    template_name = 'Levents/producto.html'
+    success_url = reverse_lazy('/')
