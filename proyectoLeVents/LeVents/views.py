@@ -5,7 +5,7 @@ from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 
 # -----------  para nuestos modelos --------------------
 from .models import Usuario, Marca, Genero, Tipo, Producto, Boleta, Venta, Imagenes_Pagina
-from .forms import ProductoForm
+from .forms import ProductoForm, RegistroUsuarioForm
 
 def pagina_principal(request):
     generos = Genero.objects.all()
@@ -55,3 +55,15 @@ class ProductoUpdate(CreateView):
     form_class = ProductoForm
     template_name = 'Levents/producto.html'
     success_url = reverse_lazy('/')
+
+def registrar_usuario(request):
+    if request.method == "POST":
+        form = RegistroUsuarioForm(request.POST)
+        if form.is_valid():
+            model_instance = form.save(commit=False)
+            model_instance.save()
+            return redirect('/registrar_usuario')
+    else:
+        form = RegistroUsuarioForm()
+        return render(request, 'LeVents/registrar_usuario.html',
+                      {'form': form})

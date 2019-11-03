@@ -12,4 +12,5 @@ urlpatterns = [
     path('productos_mujer', include('LeVents.urls')),
     path('quienes_somos', include('LeVents.urls')),
     path('login/', LoginView.as_view(template_name='LeVents/login.html'), name ="login"),
+    path('registrar_usuario', include('LeVents.urls')),
 ]

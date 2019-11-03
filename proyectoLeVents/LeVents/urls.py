@@ -14,6 +14,7 @@ urlpatterns = [
     path('productos_mujer', views.productos_mujer ),
     url(r'^productos_editar/(?P<id_producto>\d+)/$', editar_producto, name='producto_editar'),
     path('quienes-somos', views.quienes_somos ),
+    path('registrar_usuario', views.registrar_usuario),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
