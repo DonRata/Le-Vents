@@ -19,7 +19,7 @@ def quienes_somos(request):
 
 class RegistroUsuario(CreateView):
     model = User
-    template_name = "usuario/registrar.html"
+    template_name = "usuario/registro.html"
     form_class = RegistroForm
     success_url = reverse_lazy('producto:pagina_principal')
 
