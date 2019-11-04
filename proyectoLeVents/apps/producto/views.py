@@ -50,12 +50,6 @@ def borrar_producto(request, id_prod):
         return redirect('/productos_listado/')
     return render(request, 'producto/producto_eliminar.html', {'producto': producto})
 
-
-class ProductoList(ListView):
-    model = Producto
-    template_name = 'producto/productos_listar.html'
-
-
 class ProductoListado(ListView):
     model = Producto
     template_name = 'producto/productos_listado.html'
