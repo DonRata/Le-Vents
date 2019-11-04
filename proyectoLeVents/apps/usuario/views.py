@@ -12,10 +12,10 @@ from .models import Imagenes_Pagina
 from .forms import RegistroForm
 from .serializers import UserSerializer
 
-
 def quienes_somos(request):
 	qsomos = Imagenes_Pagina.objects.all()
 	return render(request, 'quienes_somos.html', {'qsomos': qsomos} )
+	
 
 class RegistroUsuario(CreateView):
     model = User

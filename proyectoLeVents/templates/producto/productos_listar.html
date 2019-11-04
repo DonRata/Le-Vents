@@ -5,16 +5,13 @@
 
 {% block content %}
 	<div class="contenedor-productos"> 
-		{% for p in productos %}
+		{% for p in object_list %}
 			<div class="producto">
 				<img src="{{p.foto.url}}" alt="{{p.nombre_producto}}" />
 				<br />&nbsp;{{p.nombre_producto}}<br />
 				<h6>&nbsp;{{p.precio}}</h6>
 				{{p.genero}}
 				<button class="btn-comprar">&nbsp;Comprar&nbsp;</button>
-				<div class="boton">
-						<a class="btn-ir" href="/editar/{{p.id_producto}}">Ver producto</a>
-				</div>
 			</div>
 		{% endfor %}
 	</div>

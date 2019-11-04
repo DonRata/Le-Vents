@@ -24,7 +24,6 @@ class Tipo(models.Model):
     id_tipo = models.IntegerField()
     nombre_tipo = models.CharField(max_length=20)
 
-
     def __str__(self):
         return self.nombre_tipo
 
