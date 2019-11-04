@@ -228,3 +228,10 @@
         padding-right: 4px;
     }
 }
+.linea1 td{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+}
+.linea_producto td{
+    font-family: 'Times New Roman', Times, serif;
+}
