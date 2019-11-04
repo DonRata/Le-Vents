@@ -2,9 +2,9 @@
 {% load staticfiles %}
 
 {% block content %}
-<table class="table table-bordered">
+<table class="table table-responsive">
 	<thead>
-		<tr>
+		<tr class="linea1">
 			<td>Id Producto</td>	
 			<td>Nombre Producto</td>
 			<td>Precio</td>
@@ -19,7 +19,7 @@
 	<tbody>
 		{% if object_list %}
 		{% for producto in object_list %}
-		<tr>
+		<tr class="linea_producto">
 			<td>{{ producto.id_producto }}</td>
 			<td>{{ producto.nombre_producto }}</td>
 			<td>{{ producto.precio }}</td>
