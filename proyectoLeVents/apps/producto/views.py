@@ -58,3 +58,9 @@ class ProductoCreate(CreateView):
     model = Producto
     form_class = ProductoForm
     template_name = 'producto/producto_agregar.html'
+
+class ProductoUpdate(UpdateView):
+    model = Producto
+    form_class = ProductoForm
+    template_name = 'producto/productos_editar.html'
+    #success_url = reverse_lazy('/productos_listado/')
