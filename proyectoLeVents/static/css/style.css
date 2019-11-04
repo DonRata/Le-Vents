@@ -3,7 +3,7 @@
     background-color: lightgrey;
 }
 .header{
-    background-color: grey !important;
+    background-color: #343a40 !important;
     display: flex;
     justify-content: space-between;
 }
@@ -125,7 +125,17 @@
         align-content: center;
         align-items: center;
     }
-    
+    .navbar-maxres{
+        display: none;
+    }
+    .nav-pagina {
+        color: white !important; 
+        font-size:13px !important; 
+        font-family: "Times New Roman", Times, serif !important;
+    }
+    .btn-abrir-popup {
+        font-size: 13px;
+    }
     .test{
         width: 40% !important;
         display: flex;
@@ -183,6 +193,9 @@
         align-content: center;
         align-items: center;
     }
+    .navbar-minres{
+        display:none;
+    }
     
     .tienda img{
         width: 40%;
@@ -227,6 +240,12 @@
         padding-left: 4px;
         padding-right: 4px;
     }
+    .nav-pagina {
+        color: white !important; 
+        font-size:16px !important; 
+        font-family: "Times New Roman", Times, serif !important;
+    }
+    
 }
 .linea1 td{
     font-family: 'Times New Roman', Times, serif;
@@ -234,4 +253,12 @@
 }
 .linea_producto td{
     font-family: 'Times New Roman', Times, serif;
+}
+.btn-abrir-popup    {
+    color:white;
+    background-color:transparent;
+    border:transparent; 
+    padding-right:10px; 
+    display:flex; 
+    font-family: "Times New Roman", Times, serif;
 }

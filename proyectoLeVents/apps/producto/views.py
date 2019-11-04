@@ -29,9 +29,6 @@ def listar_productos(request, id_url):
         productos = Producto.objects.all().filter(categoria_id=id_url+1)
     return render(request, 'producto/productos_listar.html', {'productos': productos})
 
-
-
-
 class ProductoListado(ListView):
     model = Producto
     template_name = 'producto/productos_listado.html'

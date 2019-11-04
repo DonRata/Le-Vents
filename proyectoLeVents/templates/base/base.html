@@ -50,46 +50,70 @@
           <a href="/" style="display:inline-block;">
             <img src="{% static 'img/logos/Logo.png' %}" alt="Logo" id="logo" />
           </a>
-          <nav class="navbar navbar-dark bg-dark">
+          <nav class="navbar navbar-dark bg-dark navbar-minres">
               <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
-              <a class="navbar-brand" href="#!">Navbar</a>
-
               <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav mr-auto mt-2 mt-md-0">
-                  <li class="nav-item active">
-                    <a class="nav-link" href="#!">Home <span class="sr-only">(current)</span></a>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link nav-pagina button"
+                      href="/quienes_somos"
+                      style="padding-bottom: 1px;"
+                      > Quienes Somos</a
+                    >
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#!">Link</a>
+                    <button
+                      id="btn-abrir-popup"
+                      class="btn-abrir-popup"
+                    >
+                      &nbsp;&nbsp; &nbsp;Iniciar Sesión
+                    </button>
+                  </li>
+                  <li class="nav-item">
+                    <button
+                      id="btn-abrir-popup"
+                      class="btn-abrir-popup"
+                    >
+                      &nbsp; &nbsp;&nbsp;Registrarse
+                    </button>
                   </li>
                 </ul>
               </div>
           </nav>
-          <nav class="navbar navbar-dark bg-primary">
+          <nav class="navbar navbar-dark bg-dark navbar-maxres">
             <ul class="navbar-nav mr-auto" style="color: white;">
               <li class="nav-item">
                 <a
-                  class="nav-link"
-                  style="color: white;"
+                  class="nav-link nav-pagina"
                   href="/quienes_somos"
                   >Quienes Somos</a
                 >
               </li>
             </ul>
-            &nbsp; &nbsp; &nbsp;
+            &nbsp;
+            <h1 style="color:white; font-size:25px">
+            |
+            </h1>
+            &nbsp;
             <button
               id="btn-abrir-popup"
               class="btn-abrir-popup"
-              style="color:white;background-color:transparent;border:transparent; padding-right:10px; display:flex"
             >
-              <img
-                src="{% static 'img/logos/user-icon.png' %}"
-                alt="Icono registro"
-                height="25"
-              />
-              &nbsp;Log In
+              &nbsp;Iniciar Sesión
+            </button>
+            &nbsp;
+            <h1 style="color:white; font-size:25px">
+            |
+            </h1>
+            &nbsp;
+            <button
+              id="btn-abrir-popup"
+              class="btn-abrir-popup"
+            >
+              &nbsp;Registrarse
             </button>
           </nav>
         </div>
