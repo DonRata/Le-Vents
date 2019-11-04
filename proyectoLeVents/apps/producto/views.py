@@ -10,8 +10,8 @@ def pagina_principal(request):
     return render(request, 'pagina_principal.html', {'categorias': categorias})
 
 
-def quienes_somos(request):
-    return render(request, 'quienes_somos.html', {})
+#def quienes_somos(request):
+ #   return render(request, 'quienes_somos.html', {})
 
 
 def listar_productos(request, id_url):

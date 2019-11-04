@@ -5,88 +5,23 @@
 {% block content %}
 <div id="container">
     <section>
-      <div>
-        <img src="/static/img/quienes.jpg" alt="" style="height: 470px; width:100%" />
-      </div>
-      <br />
-      <div class="media">
-        <img class="d-flex align-self-start mr-3" src="{% static 'img/tillas.png' %}" style="height: 300px" alt="Generic placeholder image" />
-        <div class="media-body">
-          <h5 class="mt-0">Quienes somos?</h5>
+      {% for qs in qsomos %}
+        {% if qs.nombre == 'Quienes_Somos'%}
+          <div>
+            <img src="{{qs.imagen.url}}" alt="" style="height: 470px; width:100%" />
+          </div>
           <br />
-          <p>
-            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-            scelerisque ante sollicitudin. Cras purus odio, vestibulum in
-            vulputate at, tempus viverra turpis. Fusce condimentum nunc ac
-            nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-          </p>
-          <p>
-            Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel
-            eu leo. Cum sociis natoque penatibus et magnis dis parturient
-            montes, nascetur ridiculus mus.
-          </p>
-        </div>
-      </div>
-    </section>
-    <section>
-    </section>
-    <section>
-      <div class="overlay" id="overlay">
-        <div class="popup" id="popup">
-          <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
-          <h3>Registro</h3>
-          <form action="#" method="get" id="formulario">
-            <div class="contenedor-inputs">
-              <table class="formulario">
-                <tr>
-                  <td><label for="txtNombre">Nombre Completo</label></td>
-                  <td>
-                    <input type="text" name="txtNombre" id="txtNombre" placeholder="Ingrese su nombre" />
-                  </td>
-                </tr>
-                <tr>
-                  <td><label for="txtRun">Run</label></td>
-                  <td>
-                    <input type="text" class="input_rut" name="txtRun" id="txtRun" placeholder="Ingrese su Run" />
-                  </td>
-                </tr>
-                <tr>
-                  <td><label for="txtEmail">Email</label></td>
-                  <td>
-                    <input type="text" name="txtEmail" id="txtEmail" placeholder="Ingrese su Email" />
-                  </td>
-                </tr>
-
-                <tr>
-                  <td>
-                    <label for="txtFechaNacimiento">Fecha Nacimiento</label>
-                  </td>
-                  <td>
-                    <input type="date" name="txtFechaNacimiento" id="txtFechaNacimiento" min="1990-01-01" max="2000-12-31" />
-                  </td>
-                </tr>
-
-                <tr>
-                  <td><label for="txtTelefono">Telefono Contacto</label></td>
-                  <td>
-                    <input type="text" name="txtTelefono" id="txtTelefono" placeholder="Ingrese Telefono" />
-                  </td>
-                </tr>
-
-                <tr>
-                  <td><label id="txtRegion">Región</label></td>
-                  <td><select id="regiones"></select></td>
-                </tr>
-
-                <tr>
-                  <td><label id="txtCiudad">Ciudad</label></td>
-                  <td><select id="comunas"></select></td>
-                </tr>
-              </table>
+          <div class="media">
+            <img class="d-flex align-self-start mr-3" src="{{qs.imagen2.url}}" style="height: 300px" alt="Generic placeholder image" />
+            <div class="media-body">
+              <h5 class="mt-0">Quienes somos?</h5>
+              <br />
+              <p style="padding-right:10px;">
+                  {{qs.descripcion}}
+              </p>
             </div>
-            <input type="submit" class="btn-submit" value="Registro" />
-          </form>
-        </div>
-      </div>
-
+          </div>
+        {% endif %}
+      {% endfor %}
+    </section>
 {% endblock %}

@@ -8,9 +8,14 @@ from django.contrib.auth.forms import UserCreationForm
 from django.views.generic import CreateView
 from django.urls import reverse_lazy
 
-from apps.usuario.forms import RegistroForm
-from apps.usuario.serializers import UserSerializer
+from .models import Imagenes_Pagina
+from .forms import RegistroForm
+from .serializers import UserSerializer
 
+
+def quienes_somos(request):
+	qsomos = Imagenes_Pagina.objects.all()
+	return render(request, 'quienes_somos.html', {'qsomos': qsomos} )
 
 class RegistroUsuario(CreateView):
     model = User
