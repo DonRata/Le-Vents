@@ -4,7 +4,6 @@ from .views import RegistroUsuario, UserAPI, quienes_somos
 
 app_name = 'usuario'
 urlpatterns = [
-    #path('quienes_somos/', quienes_somos, name='quienes_somos'),
     path('registrar/', RegistroUsuario.as_view()),
     url(r'^api', UserAPI.as_view(), name="api"),
 
