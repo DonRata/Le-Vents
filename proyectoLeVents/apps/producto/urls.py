@@ -3,7 +3,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth.decorators import login_required
 from .views import pagina_principal, listar_productos, editar_producto, borrar_producto
-from .views import ProductoList, ProductoListado, ProductoCreate
+from .views import ProductoListado, ProductoCreate
 from apps.usuario.views import quienes_somos
 #from apps.producto.views import pagina_principal 
 

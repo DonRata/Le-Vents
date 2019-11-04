@@ -5,7 +5,7 @@
 
 {% block content %}
 	<div class="contenedor-productos"> 
-		{% for p in object_list %}
+		{% for p in productos %}
 			<div class="producto">
 				<img src="{{p.foto.url}}" alt="{{p.nombre_producto}}" />
 				<br />&nbsp;{{p.nombre_producto}}<br />
