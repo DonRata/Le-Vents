@@ -2,8 +2,8 @@ from django.urls import path, include, re_path
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth.decorators import login_required
-from .views import pagina_principal, listar_productos, editar_producto, borrar_producto
-from .views import ProductoListado, ProductoCreate, ProductoUpdate
+from .views import pagina_principal, listar_productos
+from .views import ProductoListado, ProductoCreate, ProductoUpdate, ProductoDelete
 from apps.usuario.views import quienes_somos
 #from apps.producto.views import pagina_principal 
 
@@ -15,8 +15,7 @@ urlpatterns = [
     path('productos_listado/', ProductoListado.as_view(), name='product_listado'),
     path('productos/<int:id_url>', listar_productos, name='product_list'),
     re_path(r'^editar/(?P<pk>\d+)/$', ProductoUpdate.as_view(), name='product_edit'),
-    #path('editar/<int:pk>', ProductoUpdate.as_view(), name='product_edit'),
-    path('eliminar/<int:id_prod>', borrar_producto, name='product_delete'),
+    re_path(r'^eliminar/(?P<pk>\d+)/$', ProductoDelete.as_view(), name='product_delete'),
 ]
 
 if settings.DEBUG:

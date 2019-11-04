@@ -34,7 +34,7 @@ class Producto(models.Model):
     nombre_producto = models.CharField(max_length=100)
     precio = models.IntegerField()
     stock = models.IntegerField()
-    foto = models.ImageField(upload_to='img/productos', null=True)
+    foto = models.ImageField(upload_to='img/productos', null=True, blank= True)
     marca = models.ForeignKey(Marca, on_delete=models.CASCADE)
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
     tipo = models.ForeignKey(Tipo, on_delete=models.CASCADE)

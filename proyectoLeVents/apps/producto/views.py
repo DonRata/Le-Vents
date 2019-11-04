@@ -30,25 +30,7 @@ def listar_productos(request, id_url):
     return render(request, 'producto/productos_listar.html', {'productos': productos})
 
 
-def editar_producto(request, id_prod):
-    producto = Producto.objects.get(id_producto=id_prod)
-    if request.method == "GET":
-        form = ProductoForm(instance=producto)
-    else:
-        form = ProductoForm(request.POST, instance=producto)
-        if form.is_valid():
-            producto = form.save(commit=False)
-            producto.save()
-        return redirect('/productos_listado/')
-    return render(request, "producto/productos_editar.html", {'form': form})
 
-
-def borrar_producto(request, id_prod):
-    producto = Producto.objects.get(id_producto=id_prod)
-    if request.method == 'POST':
-        producto.delete()
-        return redirect('/productos_listado/')
-    return render(request, 'producto/producto_eliminar.html', {'producto': producto})
 
 class ProductoListado(ListView):
     model = Producto
@@ -63,4 +45,10 @@ class ProductoUpdate(UpdateView):
     model = Producto
     form_class = ProductoForm
     template_name = 'producto/productos_editar.html'
-    #success_url = reverse_lazy('/productos_listado/')
+    success_url = '/productos_listado/'
+
+class ProductoDelete(DeleteView):
+    model = Producto
+    form_class = ProductoForm
+    template_name = 'producto/producto_eliminar.html'
+    success_url = '/productos_listado/'
