@@ -11,11 +11,11 @@ app_name = 'producto'  #nombre de la app, se usa para el redirect
 urlpatterns = [
     path('', pagina_principal, name='pagina_principal'),
     path('quienes_somos/', quienes_somos, name='quienes_somos'),
-    path('agregar/', ProductoCreate.as_view(), name='product_create'),
-    path('productos_listado/', ProductoListado.as_view(), name='product_listado'),
-    path('productos/<int:id_url>', listar_productos, name='product_list'),
-    re_path(r'^editar/(?P<pk>\d+)/$', ProductoUpdate.as_view(), name='product_edit'),
-    re_path(r'^eliminar/(?P<pk>\d+)/$', ProductoDelete.as_view(), name='product_delete'),
+    path('productos/<int:id_url>',listar_productos, name='product_list'),
+    path('agregar/', login_required(ProductoCreate.as_view()), name='product_create'),
+    path('productos_listado/', login_required(ProductoListado.as_view()), name='product_listado'),
+    re_path(r'^editar/(?P<pk>\d+)/$', login_required(ProductoUpdate.as_view()), name='product_edit'),
+    re_path(r'^eliminar/(?P<pk>\d+)/$', login_required(ProductoDelete.as_view()), name='product_delete'),
 ]
 
 if settings.DEBUG:

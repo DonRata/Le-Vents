@@ -18,11 +18,12 @@ from django.conf.urls import url, include
 from django.urls import path, re_path
 from django.contrib.auth.views import LoginView, PasswordResetView
 from django.contrib.auth import views as auth_views
+from django.contrib.auth.decorators import login_required
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('apps.producto.urls'), name='producto'),
-    path('usuario/', include('apps.usuario.urls'), name='usuario'),
+    path('accounts/', include('apps.usuario.urls'), name='usuario'),
     path('login/', LoginView.as_view(template_name='registration/login.html'), name='login'),
     path('accounts/', include('django.contrib.auth.urls')),
     re_path(r'^password_reset/$',
