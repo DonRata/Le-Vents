@@ -23,11 +23,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('apps.producto.urls'), name='producto'),
     path('usuario/', include('apps.usuario.urls'), name='usuario'),
-    path('login/', LoginView.as_view(template_name='login.html'), name='login'),
+    path('login/', LoginView.as_view(template_name='registration/login.html'), name='login'),
+    path('accounts/', include('django.contrib.auth.urls')),
     re_path(r'^password_reset/$',
         auth_views.PasswordResetView.as_view(
-            template_name="registracion/password_reset_form.html",
-            email_template_name="registracion/password_reset_email.html",
+            template_name="registration/password_reset_form.html",
+            email_template_name="registration/password_reset_email.html",
             success_url=('/password_reset_done/'), # might be required
         ),
         name='password_reset'

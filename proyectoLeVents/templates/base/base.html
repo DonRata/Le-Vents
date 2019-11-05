@@ -61,24 +61,21 @@
                       class="nav-link nav-pagina button"
                       href="/quienes_somos"
                       style="padding-bottom: 1px;"
-                      > Quienes Somos</a
-                    >
+                      >Quienes Somos</a>
                   </li>
                   <li class="nav-item">
-                    <button
-                      id="btn-abrir-popup"
-                      class="btn-abrir-popup"
-                    >
-                      &nbsp;&nbsp; &nbsp;Iniciar Sesión
-                    </button>
+                    <a
+                      class="nav-link nav-pagina button"
+                      href="/accounts/login"
+                      style="padding-bottom: 1px;"
+                      >Iniciar Sesión</a>
                   </li>
                   <li class="nav-item">
-                    <button
-                      id="btn-abrir-popup"
-                      class="btn-abrir-popup"
-                    >
-                      &nbsp; &nbsp;&nbsp;Registrarse
-                    </button>
+                    <a
+                      class="nav-link nav-pagina button"
+                      href="/usuario/registrar"
+                      style="padding-bottom: 1px;"
+                      >Registrarse</a>
                   </li>
                 </ul>
               </div>
@@ -93,28 +90,32 @@
                 >
               </li>
             </ul>
-            &nbsp;
+            &nbsp;&nbsp;
+            <h1 style="color:white; font-size:25px">
+            |
+            </h1>
+            &nbsp; 
+            <ul class="navbar-nav mr-auto" style="color: white;">
+              <li class="nav-item">
+                <a
+                  class="nav-link nav-pagina button"
+                  href="/accounts/login"
+                  >Iniciar Sesión</a>
+              </li>
+            </ul>
+            &nbsp;&nbsp;
             <h1 style="color:white; font-size:25px">
             |
             </h1>
             &nbsp;
-            <button
-              id="btn-abrir-popup"
-              class="btn-abrir-popup"
-            >
-              &nbsp;Iniciar Sesión
-            </button>
-            &nbsp;
-            <h1 style="color:white; font-size:25px">
-            |
-            </h1>
-            &nbsp;
-            <button
-              id="btn-abrir-popup"
-              class="btn-abrir-popup"
-            >
-              &nbsp;Registrarse
-            </button>
+            <ul class="navbar-nav mr-auto" style="color: white;">
+              <li class="nav-item">
+                <a
+                  class="nav-link nav-pagina button"
+                  href="/usuario/registrar"
+                  >Registrarse</a>
+              </li>
+            </ul>
           </nav>
         </div>
         {% block Carousel %} 
@@ -212,47 +213,6 @@
           </div>
           <!-- Copyright -->
         </footer>
-      </section>
-      <section>
-        <div class="overlay" id="overlay">
-          <div class="popup" id="popup">
-            <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"
-              ><i class="fas fa-times"></i
-            ></a>
-            <h3>Iniciar Sesión</h3>
-            <form action="#" method="get" id="formulario">
-              <div class="contenedor-inputs">
-                <table class="formulario">
-                  <tr>
-                    <td><label for="txtUsuario">Usuario</label></td>
-                    <td>
-                      <input
-                        type="text"
-                        name="txtUsuario"
-                        id="txtUsuario"
-                        placeholder="Ingrese su Usuario"
-                      />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><label for="txtPassword">Password</label></td>
-                    <td>
-                      <input
-                        type="text"
-                        class="input_pwd"
-                        name="txtPassword"
-                        id="txtPassword"
-                        placeholder="Ingrese su Contraseña"
-                      />
-                    </td>
-                  </tr>
-                </table>
-              </div>
-              <br></br>
-              <input type="submit" class="btn-submit" value="Iniciar Sesión" />
-            </form>
-          </div>
-        </div>
       </section>
       <!--Añadiendo los Js-->
       <script src="{% static 'js/popup.js' %}"></script>
