@@ -15,8 +15,8 @@ urlpatterns = [
     path('productos/<int:id_url>',listar_productos, name='product_list'),
     path('agregar/', login_required(producto_agregar), name='product_create'),
     path('productos_listado/', login_required(producto_listado), name='product_listado'),
-    re_path(r'^editar/(?P<pk>\d+)/$', login_required(editar_producto), name='product_edit'),
-    re_path(r'^eliminar/(?P<pk>\d+)/$', login_required(borrar_producto), name='product_delete'),
+    path('editar/<int:id_prod>/', login_required(editar_producto), name='product_edit'),
+    path('eliminar/<int:id_prod>/', login_required(borrar_producto), name='product_delete'),
 ]
 
 if settings.DEBUG:

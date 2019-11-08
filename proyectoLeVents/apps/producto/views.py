@@ -40,7 +40,7 @@ def listar_productos(request, id_url):
 def editar_producto(request, id_prod):
     producto = Producto.objects.get(id_producto=id_prod)
     user = request.user
-    if user.has_perm('apps.moderador'):
+    if user.has_perm('producto.moderador'):
         if request.method == "GET":
             form = ProductoForm(instance=producto)
         else:
@@ -57,7 +57,7 @@ def editar_producto(request, id_prod):
 def borrar_producto(request, id_prod):
     producto = Producto.objects.get(id_producto=id_prod)
     user = request.user
-    if user.has_perm('apps.moderador'):
+    if user.has_perm('producto.moderador'):
         if request.method == 'POST':
             producto.delete()
             return redirect('/productos_listado/')
