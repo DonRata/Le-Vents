@@ -11,7 +11,7 @@ def pagina_principal(request):
 
 def producto_agregar(request):
     user = request.user
-    if user.has_perm('apps.moderador'):
+    if user.has_perm('producto.moderador'):
         if request.method == 'POST':
             form = ProductoForm(request.POST)
             if form.is_valid():
@@ -24,10 +24,10 @@ def producto_agregar(request):
         return redirect('/')
 
 def producto_listado(request):
-    producto = Producto.objects.all().order_by('id')
+    productos = Producto.objects.all().order_by('id')
     user = request.user
-    if user.has_perm('apps.moderador'):
-        return render(request, 'producto/productos_listado.html', {'producto':producto})
+    if user.has_perm('producto.moderador'):
+        return render(request, 'producto/productos_listado.html', {'productos':productos})
     else:
         return redirect('/') 
 
