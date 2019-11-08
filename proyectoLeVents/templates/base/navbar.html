@@ -1,0 +1,58 @@
+
+
+{% if request.user.username %}
+<nav class="navbar navbar-dark bg-dark navbar-maxres">
+    <ul class="navbar-nav mr-auto" style="color: white;">
+        <li class="nav-item">
+        <a
+            class="nav-link nav-pagina"
+            href="/quienes_somos"
+            >Quienes Somos</a
+        >
+        </li>
+    </ul>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <p class="login">
+        Iniciado como: {{request.user.username}}
+        <a style ="color: white; font-size:10px;" href="/accounts/logout">(Logout)</a>
+    </p>
+</nav>
+{% else %}
+<nav class="navbar navbar-dark bg-dark navbar-maxres">
+    <ul class="navbar-nav mr-auto" style="color: white;">
+        <li class="nav-item">
+        <a
+            class="nav-link nav-pagina"
+            href="/quienes_somos"
+            >Quienes Somos</a
+        >
+        </li>
+    </ul>
+    &nbsp;&nbsp;
+    <h1 style="color:white; font-size:25px">
+    |
+    </h1>
+    &nbsp; 
+    <ul class="navbar-nav mr-auto" style="color: white;">
+        <li class="nav-item">
+        <a
+            class="nav-link nav-pagina button"
+            href="/accounts/login"
+            >Iniciar Sesión</a>
+        </li>
+    </ul>
+    &nbsp;&nbsp;
+    <h1 style="color:white; font-size:25px">
+    |
+    </h1>
+    &nbsp;
+    <ul class="navbar-nav mr-auto" style="color: white;">
+        <li class="nav-item">
+        <a
+            class="nav-link nav-pagina button"
+            href="/accounts/registrar"
+            >Registrarse</a>
+        </li>
+    </ul>
+</nav>
+{% endif %}

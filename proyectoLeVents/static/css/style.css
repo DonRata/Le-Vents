@@ -117,6 +117,13 @@
     height: 16px;
     border-radius: 100%;
 }
+.login {
+    color: white; 
+    font-size:16px; 
+    padding-right:10px;
+    margin-bottom: 0;
+    font-family: "Times New Roman", Times, serif !important;
+}
 
 @media(max-width:600px){
     .contenedor-tienda{
