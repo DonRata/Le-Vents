@@ -50,36 +50,6 @@
           <a href="/" style="display:inline-block;">
             <img src="{% static 'img/logos/Logo.png' %}" alt="Logo" id="logo" />
           </a>
-          <nav class="navbar navbar-dark bg-dark navbar-minres">
-              <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                <ul class="navbar-nav mr-auto mt-2 mt-md-0">
-                  <li class="nav-item">
-                    <a
-                      class="nav-link nav-pagina button"
-                      href="/quienes_somos"
-                      style="padding-bottom: 1px;"
-                      >Quienes Somos</a>
-                  </li>
-                  <li class="nav-item">
-                    <a
-                      class="nav-link nav-pagina button"
-                      href="/accounts/login"
-                      style="padding-bottom: 1px;"
-                      >Iniciar Sesión</a>
-                  </li>
-                  <li class="nav-item">
-                    <a
-                      class="nav-link nav-pagina button"
-                      href="/accounts/registrar"
-                      style="padding-bottom: 1px;"
-                      >Registrarse</a>
-                  </li>
-                </ul>
-              </div>
-          </nav>
           {% block navbar %} {% endblock %}
         </div>
         {% block Carousel %} 
