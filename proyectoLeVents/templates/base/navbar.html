@@ -1,23 +1,25 @@
-
-
 {% if request.user.username %}
-<nav class="navbar navbar-dark bg-dark navbar-maxres">
-    <p class="login">
-        Iniciado como: {{request.user.username}}
-        <a style ="color: white; font-size:10px;" href="/accounts/logout">(Logout)</a>
-    </p>
-    
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <ul class="navbar-nav mr-auto" style="color: white;">
-        <li class="nav-item">
-        <a
-            class="nav-link nav-pagina"
-            href="/quienes_somos"
-            >Quienes Somos</a
-        >
-        </li>
-    </ul>
-</nav>
+    {% if perms.producto.moderador %}
+    {% include './navbar_crud.html' %}
+    {% else %}
+    <nav class="navbar navbar-dark bg-dark navbar-maxres">
+        <p class="login">
+            Iniciado como: {{request.user.username}}
+            <a style ="color: white; font-size:10px;" href="/accounts/logout">(Logout)</a>
+        </p>
+        
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <ul class="navbar-nav mr-auto" style="color: white;">
+            <li class="nav-item">
+            <a
+                class="nav-link nav-pagina"
+                href="/quienes_somos"
+                >Quienes Somos</a
+            >
+            </li>
+        </ul>
+    </nav>
+    {% endif %}
 {% else %}
 <nav class="navbar navbar-dark bg-dark navbar-maxres">
     <ul class="navbar-nav mr-auto" style="color: white;">
