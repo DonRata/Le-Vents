@@ -163,7 +163,7 @@
     }
     
     .tienda .left{
-        background-color: grey;
+        background-color: #343a40 ;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -227,7 +227,7 @@
     }
     
     .tienda .left{
-        background-color: grey;
+        background-color: #343a40 ;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
