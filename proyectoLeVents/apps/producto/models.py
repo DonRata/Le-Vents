@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django import forms
-
+from django.utils.translation import ugettext as _
 
 class Marca(models.Model):
     id_marca = models.IntegerField()
@@ -41,3 +41,9 @@ class Producto(models.Model):
 
     def __str__(self):
         return self.nombre_producto
+
+    class Meta:
+        permissions = (
+            ('moderador',_('Es moderador')),
+            ('usuario',_('Es usuario'),)
+        )

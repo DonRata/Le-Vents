@@ -3,6 +3,8 @@
 
 {% block title %}Productos{% endblock %}
 
+{% block navbar %} {% include 'base/navbar.html' %} {% endblock %}
+
 {% block content %}
 	<div class="contenedor-productos"> 
 		{% for p in productos %}

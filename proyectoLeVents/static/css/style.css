@@ -41,15 +41,25 @@
     opacity: 1;
 }
 .formulario{
+    padding: 25px;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.form-row{
+    width: 50%;
+    display: flex;
+    justify-content: center;
 }
 .formulario td{
     padding-left: 20px;
 }
 .formulario label{
     font-size: 10px;
+}
+.form-group label{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
 }
 #txtNombre-error , #txtRun-error, #txtTelefono-error, #txtEmail-error, .rut-error, #txtFechaNacimiento-error{
     color:red;
@@ -117,8 +127,15 @@
     height: 16px;
     border-radius: 100%;
 }
+.login {
+    color: white; 
+    font-size:16px; 
+    padding-right:10px;
+    margin-bottom: 0;
+    font-family: "Times New Roman", Times, serif !important;
+}
 
-@media(max-width:600px){
+@media(max-width:1000px){
     .contenedor-tienda{
         display: flex;
         flex-direction: column;
@@ -156,7 +173,7 @@
     }
     
     .tienda .left{
-        background-color: grey;
+        background-color: #343a40 ;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -183,10 +200,17 @@
         padding-left: 4px;
         padding-right: 4px;
     }
+    .login {
+        color: white; 
+        font-size:10px; 
+        padding-left:5px;
+        margin-bottom: 0;
+        font-family: "Times New Roman", Times, serif !important;
+    }
 
 }
 
-@media(min-width:600px){
+@media(min-width:1000px){
     .contenedor-tienda{
         display: flex;
         flex-direction: row;
@@ -213,7 +237,7 @@
     }
     
     .tienda .left{
-        background-color: grey;
+        background-color: #343a40 ;
         display: flex;
         flex-direction: column;
         justify-content: space-around;

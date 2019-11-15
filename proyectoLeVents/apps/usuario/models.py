@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django import forms
+from django.utils.translation import ugettext as _
 
 class Usuario(models.Model):
     run = models.CharField(max_length=200)
@@ -13,6 +14,12 @@ class Usuario(models.Model):
 
     def __str__(self):
         return self.nombre_completo
+
+    class Meta:
+        permissions = (
+            ('moderador',_('Es moderador')),
+            ('usuario',_('Es usuario'),)
+        )
 
 
 class Imagenes_Pagina(models.Model):

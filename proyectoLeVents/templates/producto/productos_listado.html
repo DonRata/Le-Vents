@@ -2,6 +2,7 @@
 {% load staticfiles %}
 
 {% block title %} Productos {% endblock %}
+{% block navbar %} {% include 'base/navbar.html' %} {% endblock %}
 
 {% block content %}
 <table class="table table-responsive">
@@ -19,8 +20,8 @@
 		
 	</thead>
 	<tbody>
-		{% if object_list %}
-		{% for producto in object_list %}
+		{% if productos %}
+		{% for producto in productos %}
 		<tr class="linea_producto">
 			<td>{{ producto.id }}</td>
 			<td>{{ producto.nombre_producto }}</td>
@@ -30,8 +31,8 @@
 			<td>{{ producto.categoria }}</td>
 			<td>{{ producto.tipo }}</td>
 			<td>
-				<a class="btn btn-primary" href="/editar/{{producto.id}}">Editar</a>
-				<a class="btn btn-danger" href="/eliminar/{{producto.id}}">Eliminar</a>
+				<a class="btn btn-primary" href="/editar/{{producto.id}}/">Editar</a>
+				<a class="btn btn-danger" href="/eliminar/{{producto.id}}/">Eliminar</a>
 			</td>
 		</tr>
 		{% endfor %}

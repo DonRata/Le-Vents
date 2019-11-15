@@ -34,7 +34,6 @@
 
     <!--Para linkear desde la carpeta de static-->
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/popup.css' %}" />
 
     <script src="{% static 'js/run-chileno.js' %}"></script>
     <script type="text/javascript">
@@ -50,73 +49,7 @@
           <a href="/" style="display:inline-block;">
             <img src="{% static 'img/logos/Logo.png' %}" alt="Logo" id="logo" />
           </a>
-          <nav class="navbar navbar-dark bg-dark navbar-minres">
-              <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                <ul class="navbar-nav mr-auto mt-2 mt-md-0">
-                  <li class="nav-item">
-                    <a
-                      class="nav-link nav-pagina button"
-                      href="/quienes_somos"
-                      style="padding-bottom: 1px;"
-                      >Quienes Somos</a>
-                  </li>
-                  <li class="nav-item">
-                    <a
-                      class="nav-link nav-pagina button"
-                      href="/accounts/login"
-                      style="padding-bottom: 1px;"
-                      >Iniciar Sesión</a>
-                  </li>
-                  <li class="nav-item">
-                    <a
-                      class="nav-link nav-pagina button"
-                      href="/usuario/registrar"
-                      style="padding-bottom: 1px;"
-                      >Registrarse</a>
-                  </li>
-                </ul>
-              </div>
-          </nav>
-          <nav class="navbar navbar-dark bg-dark navbar-maxres">
-            <ul class="navbar-nav mr-auto" style="color: white;">
-              <li class="nav-item">
-                <a
-                  class="nav-link nav-pagina"
-                  href="/quienes_somos"
-                  >Quienes Somos</a
-                >
-              </li>
-            </ul>
-            &nbsp;&nbsp;
-            <h1 style="color:white; font-size:25px">
-            |
-            </h1>
-            &nbsp; 
-            <ul class="navbar-nav mr-auto" style="color: white;">
-              <li class="nav-item">
-                <a
-                  class="nav-link nav-pagina button"
-                  href="/accounts/login"
-                  >Iniciar Sesión</a>
-              </li>
-            </ul>
-            &nbsp;&nbsp;
-            <h1 style="color:white; font-size:25px">
-            |
-            </h1>
-            &nbsp;
-            <ul class="navbar-nav mr-auto" style="color: white;">
-              <li class="nav-item">
-                <a
-                  class="nav-link nav-pagina button"
-                  href="/usuario/registrar"
-                  >Registrarse</a>
-              </li>
-            </ul>
-          </nav>
+          {% block navbar %} {% endblock %}
         </div>
         {% block Carousel %} 
         {% endblock %}
@@ -215,7 +148,6 @@
         </footer>
       </section>
       <!--Añadiendo los Js-->
-      <script src="{% static 'js/popup.js' %}"></script>
       <script src="{% static 'js/regiones-comunas.js' %}"></script>
       <script src="{% static 'js/validator.js' %}"></script>
     </div>
