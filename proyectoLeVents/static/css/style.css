@@ -278,11 +278,26 @@
 .linea_producto td{
     font-family: 'Times New Roman', Times, serif;
 }
-.btn-abrir-popup    {
+.btn-abrir-popup{
     color:white;
     background-color:transparent;
     border:transparent; 
     padding-right:10px; 
     display:flex; 
     font-family: "Times New Roman", Times, serif;
+}
+.formulario_por_lineas label{
+    font-size: 15px;
+}
+@media(min-width:800px){
+    #tabla_crud_productos{
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
+    .formulario_por_lineas{
+        width: 45%;    
+        font-family: "Times New Roman", Times, serif;
+        font-size: 15px;
+    }
 }

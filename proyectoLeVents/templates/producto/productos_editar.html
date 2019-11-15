@@ -5,10 +5,12 @@
 {% block navbar %} {% include 'base/navbar.html' %} {% endblock %}
 
 {% block content %}
-<h1>Editar Producto</h1>
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Editar</button>
+<form method="POST" class="formulario">
+	<h1>Editar Producto</h1>
+	<div class="formulario_por_lineas">
+		{% csrf_token %}
+	    {{ form.as_p }}
+	    <button type="submit">Editar</button>
+	</div>
 </form>
 {% endblock  %}
