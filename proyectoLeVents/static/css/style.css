@@ -41,15 +41,25 @@
     opacity: 1;
 }
 .formulario{
+    padding: 25px;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.form-row{
+    width: 50%;
+    display: flex;
+    justify-content: center;
 }
 .formulario td{
     padding-left: 20px;
 }
 .formulario label{
     font-size: 10px;
+}
+.form-group label{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
 }
 #txtNombre-error , #txtRun-error, #txtTelefono-error, #txtEmail-error, .rut-error, #txtFechaNacimiento-error{
     color:red;
@@ -125,7 +135,7 @@
     font-family: "Times New Roman", Times, serif !important;
 }
 
-@media(max-width:600px){
+@media(max-width:1000px){
     .contenedor-tienda{
         display: flex;
         flex-direction: column;
@@ -200,7 +210,7 @@
 
 }
 
-@media(min-width:600px){
+@media(min-width:1000px){
     .contenedor-tienda{
         display: flex;
         flex-direction: row;
