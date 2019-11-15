@@ -289,6 +289,9 @@
 .formulario_por_lineas label{
     font-size: 15px;
 }
+.mensaje_confirmacion label{
+    font-size: 15px;
+}
 @media(min-width:800px){
     #tabla_crud_productos{
         display: flex;
@@ -296,6 +299,13 @@
         align-items: center;
     }
     .formulario_por_lineas{
+        width: 45%;    
+        font-family: "Times New Roman", Times, serif;
+        font-size: 15px;
+    }
+    .mensaje_confirmacion{
+        margin-top: 10%;
+        margin-bottom: 10%;
         width: 45%;    
         font-family: "Times New Roman", Times, serif;
         font-size: 15px;
