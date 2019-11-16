@@ -1,8 +1,12 @@
 {% extends 'base/base.html' %}
+{% load staticfiles %}
 {% block title %} Registro {% endblock %}
 
 {% block navbar %} {% include 'base/navbar.html' %} {% endblock %}
 
 {% block content %}
-<h1>Registro exitoso</h1>
+<div style="text-align: center;">
+    <h1>Registro exitoso</h1>
+    <img style="height:250px; width:400px;" src="{% static 'img/success.png' %}" alt="Registro exitoso" />
+</div>
 {% endblock %}

@@ -134,6 +134,10 @@
     margin-bottom: 0;
     font-family: "Times New Roman", Times, serif !important;
 }
+#ajuste-contraseña div a{
+    color: lightseagreen !important;
+    padding-left: 15px;
+}
 
 @media(max-width:1000px){
     .contenedor-tienda{
