@@ -1,13 +1,17 @@
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
-from .models import Categoria, Producto
+from .models import Categoria, Producto, Marca
 from .forms import ProductoForm
 
 
 def pagina_principal(request):
     categorias = Categoria.objects.all()
-    return render(request, 'pagina_principal.html', {'categorias': categorias})
+    marcas = Marca.objects.all()
+    return render(request, 'pagina_principal.html', {'categorias': categorias,'marcas':marcas })
 
+def categorias_desplegadas(request):
+    marcas = Marca.objects.all()
+    return render(request, 'base/footer.html', {'marcas':marcas})
 
 def producto_agregar(request):
     user = request.user
@@ -33,9 +37,27 @@ def producto_listado(request):
 
 def listar_productos(request, id_url):
     # categorias = Categoria.objects.all().filter(id_categoria=id_categoria)
-    if id_url:
+    marcas = Marca.objects.all()
+    if id_url==1:
         productos = Producto.objects.all().filter(categoria_id=id_url+1)
-    return render(request, 'producto/productos_listar.html', {'productos': productos})
+        contexto = 'producto/productos_listar.html'
+    if id_url==2:
+        productos = Producto.objects.all().filter(categoria_id=id_url+1)
+        contexto = 'producto/productos_listar_mujer.html'
+    return render(request, contexto, {'productos': productos,'marcas':marcas})
+
+def listar_marcas(request, id_url, id_mrc):
+    # categorias = Categoria.objects.all().filter(id_categoria=id_categoria)
+    if id_url==1:
+        productos = Producto.objects.all().filter(categoria_id=2, marca_id=id_mrc)
+        marcas = Marca.objects.all()
+        contexto = 'producto/productos_listar.html'
+    if id_url==2:
+        productos = Producto.objects.all().filter(categoria_id=3, marca_id=id_mrc)
+        marcas = Marca.objects.all()
+        contexto = 'producto/productos_listar_mujer.html'
+    return render(request, contexto, {'productos': productos,'marcas':marcas})
+    
 
 def editar_producto(request, id_prod):
     producto = Producto.objects.get(id_producto=id_prod)

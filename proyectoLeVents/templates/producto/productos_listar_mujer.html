@@ -9,7 +9,7 @@
 	<select style="width: 140px; margin" class="form-control" id='selectedTask' name ='selectedTask' onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
 		<option selected >Escoja marca</option>
 		{% for m in marcas %}
-			<option value="/productos/1/marcas/{{m.id_marca}}/">{{m.nombre_marca}}</option>
+			<option value="/productos/2/marcas/{{m.id_marca}}/">{{m.nombre_marca}}</option>
 		{% endfor %}
 	</select>
 	<div class="contenedor-productos"> 

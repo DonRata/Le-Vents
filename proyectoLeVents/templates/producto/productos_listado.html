@@ -23,7 +23,7 @@
 		{% if productos %}
 		{% for producto in productos %}
 		<tr class="linea_producto">
-			<td>{{ producto.id }}</td>
+			<td>{{ producto.id_producto }}</td>
 			<td>{{ producto.nombre_producto }}</td>
 			<td>{{ producto.precio }}</td>
 			<td>{{ producto.stock }}</td>
@@ -31,8 +31,8 @@
 			<td>{{ producto.categoria }}</td>
 			<td>{{ producto.tipo }}</td>
 			<td>
-				<a class="btn btn-primary" href="/editar/{{producto.id}}/">Editar</a>
-				<a class="btn btn-danger" href="/eliminar/{{producto.id}}/">Eliminar</a>
+				<a class="btn btn-primary" href="/editar/{{producto.id_producto}}/">Editar</a>
+				<a class="btn btn-danger" href="/eliminar/{{producto.id_producto}}/">Eliminar</a>
 			</td>
 		</tr>
 		{% endfor %}
