@@ -132,6 +132,7 @@
     font-size:16px; 
     padding-right:10px;
     margin-bottom: 0;
+    padding:8px;
     font-family: "Times New Roman", Times, serif !important;
 }
 #ajuste-contraseña div a{
@@ -206,9 +207,10 @@
     }
     .login {
         color: white; 
-        font-size:10px; 
+        font-size:15px; 
         padding-left:5px;
         margin-bottom: 0;
+        padding: 8px;
         font-family: "Times New Roman", Times, serif !important;
     }
 

@@ -1,122 +1,59 @@
+{% load staticfiles %}
 {% if request.user.username %}
     {% if perms.producto.moderador %}
-    
-    {% include './navbar_crud.html' %}
-
+        {% include './navbar_crud.html' %}
     {% else %}
-    <nav class="navbar navbar-dark bg-dark navbar-minres">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="width:100%;">
+        <a href="/" style="display:inline-block;">
+            <img src="{% static 'img/logos/Logo.png' %}" alt="Logo" id="logo" />
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        
-        <p class="login">
-            {{request.user.username | title}}
-        </p>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="nav navbar-nav ml-auto">
+                <i><p class="login">Bienvenido {{request.user.first_name | title}}
+                    <a style ="color: white; font-size:10px;" href="/accounts/logout">(Logout)</a>
+                </p> </i>
                 <li class="nav-item">
                     <a
-                    class="nav-link nav-pagina button"
+                    class="nav-link nav-pagina"
                     href="/quienes_somos"
-                    style="padding-bottom: 1px;"
                     >Quienes Somos</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav mr-auto mt-2 mt-md-0">
-                <li class="nav-item">
-                    <a
-                    class="nav-link nav-pagina button"
-                    href="/accounts/logout  "
-                    style="padding-bottom: 1px;"
-                    >Cerrar Sesión</a>
                 </li>
             </ul>
         </div>
     </nav>
-    <nav class="navbar navbar-dark bg-dark navbar-maxres">
-        <p class="login">
-            Bienvenido {{request.user.username | title}}
-            <a style ="color: white; font-size:10px;" href="/accounts/logout">(Logout)</a>
-        </p>
-        
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <ul class="navbar-nav mr-auto" style="color: white;">
-            <li class="nav-item">
-            <a
-                class="nav-link nav-pagina"
-                href="/quienes_somos"
-                >Quienes Somos</a
-            >
-            </li>
-        </ul>
-    </nav>
     {% endif %}
 {% else %}
-<nav class="navbar navbar-dark bg-dark navbar-minres">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="width:100%;">
+    <a href="/" style="display:inline-block;">
+        <img src="{% static 'img/logos/Logo.png' %}" alt="Logo" id="logo" />
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-    <ul class="navbar-nav mr-auto mt-2 mt-md-0">
-        <li class="nav-item">
-        <a
-            class="nav-link nav-pagina button"
-            href="/quienes_somos"
-            style="padding-bottom: 1px;"
-            >Quienes Somos</a>
-        </li>
-        <li class="nav-item">
-        <a
-            class="nav-link nav-pagina button"
-            href="/accounts/login"
-            style="padding-bottom: 1px;"
-            >Iniciar Sesión</a>
-        </li>
-        <li class="nav-item">
-        <a
-            class="nav-link nav-pagina button"
-            href="/accounts/registrar"
-            style="padding-bottom: 1px;"
-            >Registrarse</a>
-        </li>
-    </ul>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item">
+                <a
+                class="nav-link nav-pagina button"
+                href="/accounts/login"
+                >Iniciar Sesión</a>
+            </li>
+            <li class="nav-item">
+                <a
+                class="nav-link nav-pagina button"
+                href="/accounts/registrar"
+                >Registrarse</a>
+            </li>
+            <li class="nav-item">
+                <a
+                class="nav-link nav-pagina"
+                href="/quienes_somos"
+                >Quienes Somos</a>
+            </li>
+        </ul>
     </div>
-</nav>
-<nav class="navbar navbar-dark bg-dark navbar-maxres">
-    <ul class="navbar-nav mr-auto" style="color: white;">
-        <li class="nav-item">
-        <a
-            class="nav-link nav-pagina button"
-            href="/accounts/login"
-            >Iniciar Sesión</a>
-        </li>
-    </ul>
-    &nbsp;&nbsp;
-    <h1 style="color:white; font-size:25px">
-    |
-    </h1>
-    &nbsp;
-    <ul class="navbar-nav mr-auto" style="color: white;">
-        <li class="nav-item">
-        <a
-            class="nav-link nav-pagina button"
-            href="/accounts/registrar"
-            >Registrarse</a>
-        </li>
-    </ul>
-    &nbsp;&nbsp;
-    <h1 style="color:white; font-size:25px">
-    |
-    </h1>
-    &nbsp;
-    <ul class="navbar-nav mr-auto" style="color: white;">
-        <li class="nav-item">
-        <a
-            class="nav-link nav-pagina"
-            href="/quienes_somos"
-            >Quienes Somos</a
-        >
-        </li>
-    </ul>
 </nav>
 {% endif %}
