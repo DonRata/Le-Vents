@@ -5,7 +5,7 @@
 {% block navbar %} {% include 'base/navbar.html' %} {% endblock %}
 
 {% block content %}
-<form method="post" class="formulario" action="" enctype="multipart/form-data">
+<form method="post" class="formulario" enctype="multipart/form-data">
 	<div class="formulario_por_lineas">
 		{% csrf_token %}
 		{{ form.as_p }}
