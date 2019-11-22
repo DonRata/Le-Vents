@@ -17,7 +17,7 @@ def producto_agregar(request):
     user = request.user
     if user.has_perm('producto.moderador'):
         if request.method == 'POST':
-            form = ProductoForm(request.POST)
+            form = ProductoForm(request.POST, request.FILES)
             if form.is_valid():
                 form.save()
             return redirect('/productos_listado/')
@@ -66,7 +66,7 @@ def editar_producto(request, id_prod):
         if request.method == "GET":
             form = ProductoForm(instance=producto)
         else:
-            form = ProductoForm(request.POST, instance=producto)
+            form = ProductoForm(request.POST, request.FILES,instance=producto)
             if form.is_valid():
                 producto = form.save(commit=False)
                 producto.save()
