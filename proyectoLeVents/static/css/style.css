@@ -329,7 +329,7 @@
         width: 900px;
     }
 }
-#formulario_log_in, #form_rest{
+#formulario_log_in, #form_rest, #form_reg_exitoso{
     margin-top: 5%;
     margin-bottom: 5%;
 }
@@ -342,4 +342,7 @@
 }
 .filtro_marca{
     margin-left: 10%;
+}
+#quienes_somos{
+    font-family: 'Times New Roman', Times, serif;
 }
