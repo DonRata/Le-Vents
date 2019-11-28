@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'apps.producto',
     'apps.usuario',
     'apps.venta',
+    'rest_framework',
 
 ]
 
