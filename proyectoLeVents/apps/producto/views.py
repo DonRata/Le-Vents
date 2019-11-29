@@ -3,6 +3,18 @@ from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from .models import Categoria, Producto, Marca
 from .forms import ProductoForm
 
+#Para importar las apis
+from rest_framework import generics
+from .serializers import ProductSerializer
+
+class ProductViewSet(generics.ListCreateAPIView):
+        queryset= Producto.objects.all()
+        serializer_class= ProductSerializer
+
+class ProductViewSetDetail(generics.RetrieveUpdateDestroyAPIView):
+        queryset= Producto.objects.all()
+        serializer_class= ProductSerializer
+
 
 def pagina_principal(request):
     categorias = Categoria.objects.all()
