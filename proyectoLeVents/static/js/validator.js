@@ -1,51 +1,75 @@
 $("#formulario").validate(
     {
         rules:{
-            "txtNombre":{
+            "first_name":{
                 required:true,
-                minlength:5,
                 myField: { lettersonly: true }
             },
-            "txtEmail":{
+            "last_name":{
+                required:true,
+                myField: { lettersonly: true }
+            },
+            "username":{
+                required:true,
+                minlength:4,
+                myField: { lettersonly: true }
+            },
+            "email":{
                 required:true,
                 email:true
             },
-            "txtRun":{
-                required:true
-            },
-            "txtTelefono":{
-                number:true
-            },
-            "txtFechaNacimiento":{
+            "password1":{
                 required:true,
-                date: true
+                minlength:8
+            },
+            "password2":{
+                required:true,
+                minlength: 8
             }
         },  // -----> Fin de las reglas
         messages:{
-            "txtNombre":{
-                required:"Te falto el nombre!!!!",
-                minlength: "Min. Cinco caracteres minimo",
-                myField: "Este campo solo permite letras"
+            "first_name":{
+                required:"* Te falto el Nombre",
+                myField: "* Este campo solo permite letras"
             },
-           "txtEmail":{
-                required: "Te falto el email",
-                email:"No tiene el formato email"
+           "last_name":{
+                required: "* Te falto poner el Apellido",
+                myField: "* Este campo solo permite letras"
             },
-            "txtRun":{
-                required: "Te falto poner run"
+            "username":{
+                required: "* Te falto escribir el usuario",
+                minlength: "* Tu nombre de usuario debe tener mas de 4 caracteres",
+                myField: "* Solo se permiten letras"
             },
-            "txtTelefono":{
-                number: "Este campo permite solo numeros"
+            "email":{
+                required: "* Tienes que introducir un mail",
+                email: "* No tiene formato de email"
             },
-            "txtFechaNacimiento":{
-                required:"Tienes que poner la fecha de nacimiento"
+            "password1":{
+                required:"* Tienes que introducir una contraseña",
+                minlength: "* Tiene que tener minimo 8 caracteres"
+            },
+            "password2":{
+                required:"* Tienes que introducir una contraseña",
+                minlength: "* Tiene que tener minimo 8 caracteres"
             }
         }
     }   // ---> final del objeto json
     
 );
 
-$('#txtNombre').keypress(function (e) {
+$('#first_name').keypress(function (e) {
+    var regex = new RegExp("^[a-zA-Z]+$");
+    var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+    if (regex.test(str)) {
+        return true;
+    }
+    else
+    {
+    return false;
+    }
+}); 
+$('#last_name').keypress(function (e) {
     var regex = new RegExp("^[a-zA-Z]+$");
     var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
     if (regex.test(str)) {

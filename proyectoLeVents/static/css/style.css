@@ -62,7 +62,7 @@
     font-family: 'Times New Roman', Times, serif;
     font-size: 15px;
 }
-#txtNombre-error , #txtRun-error, #txtTelefono-error, #txtEmail-error, .rut-error, #txtFechaNacimiento-error{
+#first_name-error , #last_name-error, #email-error, #username-error, #password1-error, #password2-error{
     color:red;
     font-size: 12px !important;
     font-family: 'Montserrat', sans-serif;
